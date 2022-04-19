@@ -22,13 +22,14 @@ function App() {
   }
 
   const archivoExportado = function (e){
-      html2canvas(document.querySelector("#exportar")).then(canvas => {
-      document.body.appendChild(canvas);
-      let img = canvas.toDataURL("img/png");
-      let link = document.createElement('a');
-      link.download = 'tarjeta.png';
-      link.href = img;
-      link.click();  
+    html2canvas(document.querySelector("#exportar")).then(canvas => {
+    {/*document.body.appendChild(canvas); se puede usar para el historial de tarjetas*/}
+    let img = canvas.toDataURL("img/png");
+    let link = document.createElement('a');
+    link.download = 'tarjeta.png';
+    link.href = img;
+    link.click();
+
   });
   }
 
